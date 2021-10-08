@@ -1,6 +1,35 @@
 import { Link, Route, Switch } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import cart from './../../Data/Cart';
 
 const MainHeader = () => {
+
+    const [isLoaded, setIsLoaded] = useState(true)
+    const [items, setItems] = useState(null)
+
+    useEffect(() => {
+        fetch(cart)
+            .then(() => {
+                setIsLoaded(false)
+                setItems(cart)
+            })
+            .catch(err => console.log('An error occured - ' + err))
+    }, [items])
+
+    function renderBtn() {
+        let val = cart.length;
+        if(!isLoaded) {
+            if (val === 0) {
+                return null;
+            } else if (val <= 9) {
+                return <div className="cart__count">{ cart.length }</div>
+            } else {
+                return <div className="cart__count">9</div>
+            }
+            
+        }
+    }
+
     return (
         <div className="header">
             <div className="navigation">
@@ -71,8 +100,17 @@ const MainHeader = () => {
                             </Route>
                         </Switch>
                     </ul>
+                    <div className="cart">
+                        <img src={ process.env.PUBLIC_URL + '/assets//cart.png' } />
+                    </div>
+
+                    { renderBtn() }
                 </div>
             </div>
+
+            <Link to="/shop" className="c-msg">
+                Shop now
+            </Link>
         </div>
     );
 }
