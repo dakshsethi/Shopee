@@ -1,9 +1,82 @@
 @import url("https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap");
-body {
+* {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: 'Sora', sans-serif;
+}
+
+.main {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.header {
+  width: 100%;
+  height: 100vh;
+  background: url("./images/main5.jpg");
+  background-size: cover;
+  background-position: center;
+  background-position-y: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header .navigation {
+  width: 80%;
+  padding: 40px 0;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .navigation .logo {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.header .navigation .nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .navigation .nav ul .links {
+  list-style: none;
+  padding: 0 30px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.header .navigation .nav ul .links a {
+  text-decoration: none;
+  color: #3b3b3b;
+}
+
+.header .navigation .nav ul .links a.active {
+  color: azure;
 }
 /*# sourceMappingURL=index.css.map */
