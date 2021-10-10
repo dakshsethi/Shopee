@@ -101,7 +101,7 @@ const MainHeader = () => {
                         </Switch>
                     </ul>
                     <div className="cart">
-                        <img src={ process.env.PUBLIC_URL + '/assets//cart.png' } />
+                        <img src={ process.env.PUBLIC_URL + '/assets//cart.png' }  alt="Cart" />
                     </div>
 
                     { renderBtn() }

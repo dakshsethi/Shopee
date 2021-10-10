@@ -141,4 +141,96 @@
   border: 1px solid purple;
   color: white;
 }
+
+.content__wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1em;
+}
+
+.content__wrapper .content__area {
+  width: 80%;
+  padding: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content__wrapper .content__area .ct {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 2em 0;
+}
+
+.content__wrapper .content__area .ct .left, .content__wrapper .content__area .ct .right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 0 1em;
+  padding: 0px 1em 0px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.content__wrapper .content__area .ct .left img, .content__wrapper .content__area .ct .right img {
+  width: 80%;
+}
+
+.content__wrapper .content__area .ct .left .price, .content__wrapper .content__area .ct .right .price {
+  font-size: 20px;
+  margin-top: 0.6em;
+  font-weight: 600;
+  color: #666666;
+}
+
+.content__wrapper .content__area .ct .left .text, .content__wrapper .content__area .ct .right .text {
+  text-align: justify;
+  margin-top: 0.6em;
+}
+
+.content__wrapper .content__area .ct .left .product, .content__wrapper .content__area .ct .right .product {
+  margin-top: 0.6em;
+  text-transform: uppercase;
+  font-size: 16px;
+  text-decoration: none;
+  color: purple;
+  padding: 10px 20px;
+  border: 1px solid #b4b4b4;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.content__wrapper .content__area .ct .left .product:hover, .content__wrapper .content__area .ct .right .product:hover {
+  background: purple;
+  border: 1px solid purple;
+  color: white;
+}
 /*# sourceMappingURL=index.css.map */
