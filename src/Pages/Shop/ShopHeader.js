@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import RenderCart from "../../Data/RenderCart";
 
-const MainHeader = () => {
+const ShopHeader = () => {
     return (
-        <div className="header">
+        <div className="header shop">
             <div className="navigation">
                 <div className="logo">
                     shopee
@@ -11,13 +11,13 @@ const MainHeader = () => {
                 <div className="nav">
                     <ul>
                         <li className="links">
-                            <Link to="/" className="active">Home</Link>
+                            <Link to="/">Home</Link>
                         </li>
                         <li className="links">
                             <Link to="/about">About</Link>
                         </li>
                         <li className="links">
-                            <Link to="/shop">Shop</Link>
+                            <Link to="/shop" className="active">Shop</Link>
                         </li>
                         <li className="links">
                             <Link to="/contact">Contact</Link>
@@ -37,4 +37,4 @@ const MainHeader = () => {
     );
 }
 
-export default MainHeader;
+export default ShopHeader;
