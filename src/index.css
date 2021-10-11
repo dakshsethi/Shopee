@@ -241,4 +241,97 @@
   border: 1px solid purple;
   color: white;
 }
+
+.products {
+  width: 100%;
+  padding: 2em 2em 4em 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.products h1 {
+  margin: 2em 0;
+}
+
+.products .product__area {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.products .product__area .product__card {
+  padding: 1em;
+}
+
+.products .product__area .product__card img {
+  width: 100%;
+}
+
+.products .product__area .product__card .product__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.products .product__area .product__card .product__info .text h3 {
+  text-transform: capitalize;
+  color: black;
+  margin-top: 0.6em;
+}
+
+.products .product__area .product__card .product__info .text .price {
+  color: #666666;
+}
+
+.products .product__area .product__card .product__info .view {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  text-decoration: none;
+  color: purple;
+  padding: 10px 20px;
+  border: 1px solid #f74343;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  width: fit-content;
+}
+
+.products .product__area .product__card .product__info .view:hover {
+  background: purple;
+  border: 1px solid purple;
+  color: white;
+}
+
+.products .product__area .product__card .product__info .view.sold {
+  color: red;
+}
+
+.products .product__area .product__card .product__info .view.sold:hover {
+  background: #f74343;
+  border: 1px solid #f74343;
+  color: white;
+}
 /*# sourceMappingURL=index.css.map */
