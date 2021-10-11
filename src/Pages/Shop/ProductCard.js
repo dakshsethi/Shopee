@@ -9,7 +9,7 @@ const ProductCard = (props) => {
                     <h3>{ props.data.name }</h3>
                     <div className="price">{ props.data.price }</div>
                 </div>
-                {props.data.sold_out === false && <Link className="view" to={ props.data.url }>view</Link>}
+                {props.data.sold_out === false && <Link className="view" to={ props.data.url + props.data.id }>view</Link>}
                 {props.data.sold_out === true && <Link className="view sold" to={ props.data.url + props.data.id }>sold</Link>}
             </div>
         </div>

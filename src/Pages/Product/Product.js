@@ -1,9 +1,11 @@
+import { useParams } from "react-router"
 import { useState, useEffect } from 'react';
+import ProductDetail from "./ProductDetail";
+import ProductHeader from "./ProductHeader";
 import ProductList from "../../Data/ProductList";
-import ProductCard from './ProductCard';
 
-const Products = () => {
-
+const Product = () => {
+    const { id } = useParams();
     const [isLoaded, setIsLoaded] = useState(true)
     const [products, setProducts] = useState(null)
 
@@ -16,19 +18,13 @@ const Products = () => {
             .catch(err => console.log('An error occured - ' + err))
     }, [products])
 
-    return (
-        <div className="products">
-            <h1>Our Collection</h1>
-            <div className="product__area">
-                {isLoaded && <h1>Loading Products</h1> }
-
-                {products && products.map((product) => (
-                    <ProductCard key={ product.id } data={ product } />
-                ))}
-            </div>
+    return(
+        <div>
+            <ProductHeader />
+            {isLoaded && <h1>Loading Your Product</h1>}
+            <ProductDetail key={ ProductList[id-1].id } data={ ProductList[id-1] } />
         </div>
-
     );
 }
 
-export default Products;
+export default Product;

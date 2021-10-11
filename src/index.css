@@ -313,7 +313,7 @@
   text-decoration: none;
   color: purple;
   padding: 10px 20px;
-  border: 1px solid #f74343;
+  border: 1px solid #b4b4b4;
   -webkit-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
   width: fit-content;
@@ -333,5 +333,88 @@
   background: #f74343;
   border: 1px solid #f74343;
   color: white;
+}
+
+.header.product {
+  background: #f0f1f3;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.product__show {
+  width: 100%;
+  padding: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.product__show .product__display {
+  width: 75%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.product__show .product__display .product__photo {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.product__show .product__display .product__photo img {
+  width: 100%;
+}
+
+.product__show .product__display .product__info {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding-left: 2em;
+}
+
+.product__show .product__display .product__info h1 {
+  text-transform: capitalize;
+  margin-top: -0.2em;
+}
+
+.product__show .product__display .product__info p {
+  margin-top: 0.6em;
+  color: #666666;
+  font-size: 14px;
+}
+
+.product__show .product__display .product__info h2 {
+  margin-top: 0.6em;
+}
+
+.product__show .product__display .product__info button {
+  margin-top: 1em;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-size: 20px;
+  border: 1px solid grey;
+  outline: none;
+  color: #e67689;
+  background: none;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.product__show .product__display .product__info button:hover {
+  background: #e67689;
+  border: 1px solid #e67689;
+  color: white;
+  cursor: pointer;
 }
 /*# sourceMappingURL=index.css.map */
