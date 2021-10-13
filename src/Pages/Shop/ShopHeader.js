@@ -25,9 +25,9 @@ const ShopHeader = (props) => {
                             <Link to="/contact">Contact</Link>
                         </li>
                     </ul>
-                    <div className="cart">
+                    <Link to="/cart" className="cart">
                         <img src={ process.env.PUBLIC_URL + '/assets//cart.png' }  alt="Cart" />
-                    </div>
+                    </Link>
                     <RenderCart cartItems={ cartItems } />
                 </div>
             </div>

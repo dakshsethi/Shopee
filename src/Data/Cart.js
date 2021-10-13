@@ -14,10 +14,10 @@ const cart = [
     {
         id: 2,
         count: 2,
-        name: 'under eye mask',
-        price: 200,
+        name: 'masoor dal face mask',
+        price: 350,
         discount_per: 0,
-        photo: '/assets/products//under-eye-mask.jpg',
+        photo: '/assets/products//masoor-dal-face-mask.jpg',
         sold_out: false,
         limited_stocks_available: false,
         url: '/shop/product/',

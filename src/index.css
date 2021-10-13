@@ -417,4 +417,105 @@
   color: white;
   cursor: pointer;
 }
+
+.cart__area {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2em;
+}
+
+.cart__area .cart__show {
+  width: 60%;
+  padding: 1em 0;
+}
+
+.cart__area .cart__show .cart__item {
+  width: 100%;
+  padding: 10px;
+  margin: 15px;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  border: 1px solid #b3b3b3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.cart__area .cart__show .cart__item .item__photo {
+  -webkit-box-flex: 0.2;
+      -ms-flex: 0.2;
+          flex: 0.2;
+}
+
+.cart__area .cart__show .cart__item .item__photo img {
+  width: 100%;
+}
+
+.cart__area .cart__show .cart__item .item__info {
+  -webkit-box-flex: 0.7;
+      -ms-flex: 0.7;
+          flex: 0.7;
+  padding-left: 1em;
+}
+
+.cart__area .cart__show .cart__item .item__info h2 {
+  margin-top: -0.2em;
+  text-transform: capitalize;
+}
+
+.cart__area .cart__show .cart__item .item__info .desc {
+  width: 600px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cart__area .cart__show .cart__item .item__info .count {
+  margin-top: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cart__area .cart__show .cart__item .item__info .count h3 {
+  margin-right: 2em;
+}
+
+.cart__area .cart__show .cart__item .item__info .count button, .cart__area .cart__show .cart__item .item__info .count span {
+  padding: 5px 10px;
+  font-size: 16px;
+  margin: 0 3px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.cart__area .cart__show .cart__item .item__info .count span {
+  border: 1px solid grey;
+}
+
+.cart__area .cart__show .cart__item .item__info .total {
+  margin-top: 0.6em;
+}
+
+.cart__area .cart__show .cart__item:hover {
+  border: 1px solid black;
+  border-radius: 10px;
+  -webkit-box-shadow: black 2px 2px 2px;
+          box-shadow: black 2px 2px 2px;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
 /*# sourceMappingURL=index.css.map */
