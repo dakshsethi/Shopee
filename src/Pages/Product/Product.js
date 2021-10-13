@@ -8,7 +8,7 @@ const Product = () => {
     const { id } = useParams();
     const [isLoaded, setIsLoaded] = useState(true)
     const [products, setProducts] = useState(null)
-
+    
     useEffect(() => {
         fetch(ProductList)
             .then(() => {

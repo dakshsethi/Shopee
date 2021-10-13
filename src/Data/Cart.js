@@ -1,6 +1,7 @@
 const cart = [
     {
         id: 1,
+        count: 3,
         name: 'under eye mask',
         price: 200,
         discount_per: 0,

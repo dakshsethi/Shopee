@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react';
 import cart from '../../Data/Cart';
+import RenderCart from '../../Data/RenderCart';
 
 const ProductDetail = (props) => {
+
+    const [items, setItems] = useState(null)
+    const [count, setCount] = useState(countItems())
 
     function handleCart() {
         const item = props.data;
@@ -21,18 +25,39 @@ const ProductDetail = (props) => {
                 prev[prev.length] = item;
             }
         })
-        console.log(cart);
+        // console.log(cart, items);
+        // cart = items;
+        // setItems(items);
+        setCount(countItems());
+        console.log(count)
+
     }
 
-    const [items, setItems] = useState(null)
+    // useEffect(() => {
+    //     fetch(cart)
+    //         .then(() => {
+    //             setItems(cart)
+    //         })
+    //         .catch(err => console.log('An error occured - ' + err))
+    // }, [items])
 
     useEffect(() => {
-        fetch(cart)
-            .then(() => {
-                setItems(cart)
-            })
-            .catch(err => console.log('An error occured - ' + err))
+        setItems(cart)
+        // console.log("ran", count)
+        setCount(countItems())
     }, [items])
+
+    function countItems() {
+        // console.log(cart)
+        let val = 0;
+        cart.forEach(item => {
+            if(item.count !== undefined)
+                val = item.count;
+            else
+                val++;
+        });
+        return val;
+    }
 
     return (
         <div className="product__show">
@@ -45,6 +70,7 @@ const ProductDetail = (props) => {
                     <p align="justify">
                         { props.data.description }
                     </p>
+                    <RenderCart />
                     <h2>{ 'Rs. ' + props.data.price }</h2>
                     <button type="button" onClick={() => handleCart()}>add to cart</button>
                 </div>

@@ -5,26 +5,44 @@ const RenderCart = () => {
 
     const [isLoaded, setIsLoaded] = useState(true)
     const [items, setItems] = useState(null)
+    const [count, setCount] = useState(0)
+
+    // useEffect(() => {
+    //     fetch(cart)
+    //         .then(() => {
+    //             setIsLoaded(false)
+    //             setItems(cart)
+    //             setCount(countItems())
+                
+    //         })
+    //         .catch(err => console.log('An error occured - ' + err))
+    // }, [items])
 
     useEffect(() => {
-        fetch(cart)
-            .then(() => {
-                setIsLoaded(false)
-                setItems(cart)
-            })
-            .catch(err => console.log('An error occured - ' + err))
-    }, [items])
+        setIsLoaded(false)
+        setItems(cart)
+        setCount(countItems())
+    })
 
-    let val = cart.length;
+    function countItems() {
+        let val = 0;
+        cart.forEach(item => {
+            if(item.count !== undefined)
+                val = item.count;
+            else
+                val++;
+        });
+        return val;
+    }
+
     if(!isLoaded) {
-        if (val === 0) {
+        if (count === 0) {
             return null;
-        } else if (val <= 9) {
-            return (<div className="cart__count">{ cart.length }</div>)
+        } else if (count <= 9) {
+            return (<div className="cart__count">{ count }</div>)
         } else {
-            return (<div className="cart__count">9</div>)
+            return (<div className="cart__count">9+</div>)
         }
-        
     } else {
         return null;
     }
