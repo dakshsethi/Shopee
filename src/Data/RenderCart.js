@@ -1,39 +1,28 @@
 import { useState, useEffect } from 'react';
-import cart from './Cart';
 
-const RenderCart = () => {
-
+const RenderCart = (props) => {
+    const { cartItems } = props;
     const [isLoaded, setIsLoaded] = useState(true)
-    const [items, setItems] = useState(null)
     const [count, setCount] = useState(0)
-
-    // useEffect(() => {
-    //     fetch(cart)
-    //         .then(() => {
-    //             setIsLoaded(false)
-    //             setItems(cart)
-    //             setCount(countItems())
-                
-    //         })
-    //         .catch(err => console.log('An error occured - ' + err))
-    // }, [items])
-
-    useEffect(() => {
-        setIsLoaded(false)
-        setItems(cart)
-        setCount(countItems())
-    })
 
     function countItems() {
         let val = 0;
-        cart.forEach(item => {
-            if(item.count !== undefined)
-                val = item.count;
-            else
-                val++;
-        });
-        return val;
+        if(cartItems !== undefined) {
+            cartItems.forEach(item => {
+                if(item.count !== undefined)
+                    val += item.count;
+                else
+                    val++;
+            });
+            return val;
+        }
     }
+    
+    useEffect(() => {
+        setIsLoaded(false)
+        if(cartItems !== undefined)
+            setCount(countItems());
+    })
 
     if(!isLoaded) {
         if (count === 0) {
@@ -46,7 +35,6 @@ const RenderCart = () => {
     } else {
         return null;
     }
-    
 }
 
 export default RenderCart;

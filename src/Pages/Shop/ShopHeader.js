@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import RenderCart from "../../Data/RenderCart";
 
-const ShopHeader = () => {
+const ShopHeader = (props) => {
+    const { cartItems } = props;
+
     return (
         <div className="header shop">
             <div className="navigation">
@@ -26,7 +28,7 @@ const ShopHeader = () => {
                     <div className="cart">
                         <img src={ process.env.PUBLIC_URL + '/assets//cart.png' }  alt="Cart" />
                     </div>
-                    <RenderCart />
+                    <RenderCart cartItems={ cartItems } />
                 </div>
             </div>
 

@@ -1,10 +1,12 @@
 import ShopHeader from "./ShopHeader";
 import Products from "./Products";
 
-const Shop = () => {
+const Shop = (props) => {
+    const { cartItems } = props;
+    
     return (
         <div>
-            <ShopHeader />
+            <ShopHeader cartItems={ cartItems } />
             <Products />
         </div>
     );
