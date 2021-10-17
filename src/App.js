@@ -11,15 +11,25 @@ const App = () => {
   
   const onAdd = (product) => {
     const exist = cartItems.find(x => x.id === product.id);
-    console.log(product.id)
     if(exist) {
         setCartItems(cartItems.map(x => 
-            x.id === product.id ?  {...exist, count: exist.count+1} :  x
-        ))
+            x.id === product.id ?  {...exist, count: exist.count + 1} :  x
+        ));
     } else {
         setCartItems([...cartItems, {...product, count: 1}])
     }
     console.log(cartItems)
+  }
+
+  const onRemove = (product) => {
+    const exist = cartItems.find(x => x.id === product.id);
+    if(exist.count === 1) {
+      setCartItems(cartItems.filter((x) => x.id !== product.id));
+    } else {
+      setCartItems(cartItems.map(x => 
+        x.id === product.id ?  {...exist, count: exist.count - 1} :  x
+      ));
+    }
   }
 
   return (
@@ -36,7 +46,7 @@ const App = () => {
             <Product onAdd={ onAdd } cartItems={ cartItems } />
           </Route>
           <Route exact path="/cart">
-            <Cart onAdd={ onAdd } cartItems={ cartItems } />
+            <Cart onAdd={ onAdd } onRemove={ onRemove } cartItems={ cartItems } />
           </Route>
         </Switch>
       </BrowserRouter>

@@ -1,5 +1,5 @@
 const CartItem = (props) => {
-    const { data, onAdd } = props;
+    const { data, onAdd, onRemove } = props;
 
     return (
         <div className="cart__item">
@@ -11,7 +11,7 @@ const CartItem = (props) => {
                 <div className="desc">{ data.description }</div>
                 <div className="count">
                     <h3>Quantity: </h3>
-                    <button type="button">-</button>
+                    <button type="button" onClick={() => onRemove(data)}>-</button>
                     <span>{ data.count }</span>
                     <button type="button" onClick={() => onAdd(data)}>+</button>
                 </div>

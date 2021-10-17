@@ -4,24 +4,11 @@ const RenderCart = (props) => {
     const { cartItems } = props;
     const [isLoaded, setIsLoaded] = useState(true)
     const [count, setCount] = useState(0)
-
-    function countItems() {
-        let val = 0;
-        if(cartItems !== undefined) {
-            cartItems.forEach(item => {
-                if(item.count !== undefined)
-                    val += item.count;
-                else
-                    val++;
-            });
-            return val;
-        }
-    }
     
     useEffect(() => {
         setIsLoaded(false)
         if(cartItems !== undefined)
-            setCount(countItems());
+            setCount(cartItems.length);
     })
 
     if(!isLoaded) {
